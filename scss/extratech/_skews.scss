@@ -1,0 +1,138 @@
+//
+// Element Skews
+//
+
+// Default bottom skew. Works for most cases.
+//
+// If rotation is not working or not working as intended create new
+// class with rotate mixin. See below.
+.rotate-bottom {
+    position: relative;
+
+    &:before {
+        z-index: -1;
+        content: '';
+        display: block;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+            bottom: -20px;
+            left: 0;
+        height: 40px;
+        transform: rotate(178deg);
+    }
+}
+
+.rotate-top {
+    position: relative;
+
+    &:before {
+        z-index: -1;
+        content: '';
+        display: block;
+        width: 100%;
+        background: #fff;
+        position: absolute;
+            top: -22px;
+            left: 0;
+        height: 40px;
+        transform: rotate(178deg);
+    }
+}
+
+// We use this mixin to rotate one side of element (top or bottom).
+//
+// 1. $side - On which side element will rotate.
+// 2. $deg - Degree of rotation.
+// 3. $top - Position top of rotate. (must always be negative).
+// 4. $bottom - Position bottom of rotate. (must always be negative).
+// 5. $height - Height of the rotated block.
+// 6. $background - Background color of rotated block.
+@mixin rotate($side: top, $deg: 178deg, $top: -20px, $bottom: -20px, $height: 40px, $bg: #fff) {
+    position: relative;
+
+    &:before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        @if $side == top {
+            top: $top;
+        } 
+        @else if $side == bottom {
+            bottom: $bottom;
+        }
+
+        display: block;
+        width: 100%;
+        height: $height;
+        background: $bg;
+        -webkit-transform: rotate($deg);
+            -ms-transform: rotate($deg);
+                transform: rotate($deg);
+    }
+}
+
+// We use this mixin to create skew to one side of element (left or right).
+//
+// 1. $side - On which side of element skew will come.
+// 2. $deg - Degree of skew.
+// 3. $right - Position right (must always be negative).
+// 4. $left - Position left. (must always be negative)
+// 5. $width - Width of skewed block.
+// 6. $bg - Background color for skewed block.
+@mixin skew($side: right, $deg: -20deg, $right: -15px, $left: -15px, $width: 30px, $bg: #fff) {
+    position: relative;
+
+    &:before {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        @if $side == right {
+            right: $right;
+        }
+        @else if $side == left {
+            left: $left;
+        }
+
+        display: block;
+        width: $width;
+        background: $bg;
+        -webkit-transform: skew($deg);
+            -ms-transform: skew($deg);
+                transform: skew($deg);
+    }
+}
+
+// Skew for right side of navigation on desktop.
+.navi-skew {
+    @include skew(right, -20deg, -15px, 0, 30px);
+}
+
+// Remove skews for mobile.
+.box-skew {
+    @include skew(right, 0, 0, 0, 0);
+    margin-right: 0;
+}
+
+.box-skew-right {
+    @include skew(right, 0, 0, 0, 0);
+    margin-left: 0;        
+}
+
+@media #{$large-up} {
+    .box-skew {
+        @include skew(right, -7deg, -25px, 0, 50px);
+        margin-right: 22px;
+    }
+
+    .box-skew-right {
+        @include skew(left, -6deg, 0, -20px, 40px);
+        margin-left: 22px;
+    }
+}

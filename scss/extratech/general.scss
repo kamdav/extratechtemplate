@@ -1,0 +1,69 @@
+//
+// General
+//
+
+@import "./foundation/components/global";
+
+
+.text-center-mobile {
+  @media #{$small-only} {
+    text-align: center;
+  }
+}
+
+.text-center-mobile-tablet {
+  @media #{$small-only}, #{$medium-only} {
+    text-align: center;
+  }
+}
+
+.white {
+    background: #fff;
+}
+
+.padding {
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.t-padding {
+   padding-top: 10px;
+}
+
+.r-padding {
+   padding-right: 10px;
+}
+
+.b-padding {
+   padding-bottom: 10px;
+}
+
+.l-padding {
+   padding-left: 10px;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.blue {
+    color: $primary-color;
+}
+
+.v-margin {
+    margin: 40px 0;
+}
+
+.h-margin {
+    margin: 0px 40px;
+}
+
+img.circle {
+  border-radius: 50%;
+}
+
+.prof-img {
+  @media #{$small-only}, #{$medium-only} {
+    pointer-events: none;
+  }
+}

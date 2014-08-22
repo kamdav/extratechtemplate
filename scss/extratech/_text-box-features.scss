@@ -1,0 +1,171 @@
+//
+// Text box features
+//
+
+@import "./foundation/components/global";
+
+
+.profile-section {
+  margin-bottom: 30px;
+}
+
+.triangle-top {
+  margin: 10px auto -20px auto;
+  width: 2px;
+
+  border-style: solid;
+  border-width: 0 20px 20px 20px;
+  border-color: transparent transparent #fff transparent;
+
+  @media #{$large-up} {
+    display: none;
+  }
+}
+
+.triangle-left {
+  @media #{$large-up} {
+    border-style: solid;
+    border-width: 20px 20px 20px 0;
+    border-color: transparent #fff transparent transparent;
+  }
+}
+
+.triangle-right {
+  @media #{$large-up} {
+    border-style: solid;
+    border-width: 20px 0 20px 20px;
+    border-color: transparent transparent transparent #fff;
+  }
+}
+
+.profile-tri-pos-right {
+  @media #{$large-up} {
+    margin: 100px -20px 0 0;
+  }
+}
+
+.profile-tri-pos-left {
+  @media #{$large-up} {
+    margin: 100px 0 0 -20px;
+  }
+}
+
+.profile-1 {
+  z-index: -99;
+  @media #{$large-up} {
+    position: absolute;
+    margin: -250px 0 0 250px;
+    width: 230px;
+  }
+}
+
+.profile-2 {
+  z-index: -99;
+  @media #{$large-up} {
+    position: absolute;
+    margin: -250px 0 0 -250px;
+    width: 230px;
+  }
+}
+
+.profile-3 {
+  z-index: -99;
+  @media #{$large-up} {
+    position: absolute;
+    margin: -250px 0 0 -250px;
+    width: 230px;
+  }
+}
+
+.profile-4 {
+  z-index: -99;
+  @media #{$large-up} {
+    position: absolute;
+    margin: -250px 0 0 -250px;
+    width: 230px;
+  }
+}
+
+.prof-inv {
+  @media #{$large-up} {
+    opacity: 0;
+    transition: 0.2s;
+  }
+}
+
+.prof-show {
+  @media #{$large-up} {
+    z-index: 99;
+    opacity: 1;
+    transition: 0.2s;
+  }
+}
+
+.prof-img {
+  @media #{$small-only}, #{$medium-only} {
+    pointer-events: none;
+    margin-top: -160px;
+    border: 10px solid aqua; //CHANGE COLOR HERE TO MAKE IT SEE THROUGH THE WHITE BACKGROUND
+  }
+  @media #{$small-only} {
+    width: 180px;
+  }
+}
+
+.prof-bg {
+  @media #{$small-only}, #{$medium-only} {
+    background-color: white;
+    margin-top: 180px;
+    margin-bottom: -20px;
+  }
+}
+
+
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+Copyright (c) 2014 Daniel Eden
+*/
+
+.animated {
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    -ms-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}

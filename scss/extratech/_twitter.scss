@@ -1,0 +1,28 @@
+//
+// twitter
+//
+
+@import "./foundation/components/global";
+
+
+#twitter {
+
+    li {
+        list-style-type: none;
+
+        p {
+            margin-bottom: 5px;
+        }
+
+    }
+
+    .timePosted {
+        color: $primary-color;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .user {
+        font-weight: 600;
+    }
+}
