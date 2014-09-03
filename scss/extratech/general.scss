@@ -67,3 +67,25 @@ img.circle {
     pointer-events: none;
   }
 }
+
+
+//////////// FOR GIT
+.prof-img {
+  @media #{$small-only}, #{$medium-only} {
+    pointer-events: none;
+    margin-top: -160px;
+    border: 10px solid aqua; //CHANGE COLOR HERE TO MAKE IT SEE THROUGH THE WHITE BACKGROUND
+  }
+  @media #{$small-only} {
+    width: 180px;
+  }
+}
+
+.prof-bg {
+  @media #{$small-only}, #{$medium-only} {
+    background-color: white;
+    margin-top: 180px;
+    margin-bottom: -20px;
+  }
+}
+//////////// FOR GIT
